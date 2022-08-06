@@ -21,5 +21,41 @@ def run ():
     for value in super_list:
         print(json.dumps(value, sort_keys=False, indent=1))
 
+
+def addNumsNaturalAlCuadra():
+    list_nums=[]
+    list_numAlCuadra=[]
+
+    for a in range(1,101,1):
+        numAlCuadra=a*a
+        list_nums.append(a)
+        list_numAlCuadra.append(numAlCuadra)
+    
+    print("Lista de numero naturales al 100")
+    print(list_nums)
+    print("Lista de numero naturales al cuadrado de los primeros 100 numeros")
+    print(list_numAlCuadra)
+
+    addNumsQueNoSeanDivisiblesEntre3(list_numAlCuadra)
+
+def addNumsQueNoSeanDivisiblesEntre3(lista):
+    listaDiviEntre3=[]
+    for a in lista:
+        if a%3!=0:
+            listaDiviEntre3.append(a)
+    
+    print("Lista con numeros que no son divisibles entre tres")
+    print(listaDiviEntre3)
+
+
+def listaMultiplos():
+    listaDeMulti=[i for i in range(1,99999) if i%4==0 and i%6==0 and i%9==0]
+
+    print("Lista de multiplos")
+    print(listaDeMulti)
+
+
 if __name__=="__main__":
     run()
+    addNumsNaturalAlCuadra()
+    listaMultiplos()
